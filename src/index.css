@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,34 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Terminal specific styles */
+  .terminal-glass {
+    @apply bg-terminal-background/90 backdrop-blur-sm border border-terminal-border/40;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.15);
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-terminal-border rounded-full;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-terminal-accent/50;
+  }
+
+  .terminal-text-selection::selection {
+    @apply bg-terminal-selection text-terminal-foreground;
   }
 }

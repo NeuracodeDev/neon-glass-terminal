@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				terminal: {
+					background: '#080c1f',
+					foreground: '#f0f0f0',
+					accent: '#00aaff',
+					border: '#1a2039',
+					selection: 'rgba(0, 170, 255, 0.3)',
+					cursor: '#00aaff',
+					tab: {
+						active: '#0d1429',
+						inactive: '#080c1f',
+					}
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'terminal-glow': {
+					'0%': { boxShadow: '0 0 5px rgba(0, 170, 255, 0.3)' },
+					'50%': { boxShadow: '0 0 15px rgba(0, 170, 255, 0.5)' },
+					'100%': { boxShadow: '0 0 5px rgba(0, 170, 255, 0.3)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'blink': 'blink 1s step-end infinite',
+				'terminal-glow': 'terminal-glow 2s infinite'
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
 			}
 		}
 	},
